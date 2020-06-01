@@ -1,7 +1,10 @@
+
 # Tree Traversals 
 ## Depth First Traversals (DFS):
+<font color="green"> Some green text </font>
+
 - ***Preorder:*** root ---> left child ---> right child  
-<img src="img/tree_preorder.png" width="40%" height="40%"> F, B, A, D, C, E, G, I, H.  
+<img src="img/tree_preorder.png" width="40%" height="40%"> F,| B, A, D, C, E, G, I, H.  
 
 
 - ***Inorder:*** left child ---> root ---> right child  
@@ -12,7 +15,7 @@
 
 ## Breadth First Traversal (BFS):
 - ***Level Order Traversal:*** level by level  
-<img src="img/tree_breadth-first_traversal.png" width="40%" height="40%"> F, B, G, A, D, I, C, E, H.  
+<img src="img/tree_breadth-first_traversal.png" width="40%" height="40%"> F,| B, G,| A, D, I,| C, E, H.  
 
 
 Normally when we said "a given tree", the given list is in level-order-traversal. 
