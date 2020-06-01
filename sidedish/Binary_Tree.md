@@ -1,7 +1,7 @@
 # Tree Traversals 
 ## Depth First Traversals (DFS):
-- ***Inorder:*** left child ---> root ---> right child
 - ***Preorder:*** root ---> left child ---> right child
+- ***Inorder:*** left child ---> root ---> right child
 - ***Postorder:*** left child ---> right child ---> root
 
 ## Breadth First Traversal (BFS):
