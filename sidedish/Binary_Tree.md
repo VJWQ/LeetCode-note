@@ -16,9 +16,28 @@ public void preOrderTraverse1(TreeNode root) {
 
 - ***Inorder:*** left child(tree) ---> root ---> right child(tree)  
 <img src="img/tree_inorder.png" width="40%" height="40%"> A, B, C, D, E,| F,| G, H, I.  
+```java
+public void inOrderTraverse1(TreeNode root) {
+		if (root != null) {
+			inOrderTraverse1(root.left);
+			System.out.print(root.val+"  ");
+			inOrderTraverse1(root.right);
+		}
+	}
+```
 
 - ***Postorder:*** left child(tree) ---> right child(tree) ---> root  
 <img src="img/tree_postorder.png" width="40%" height="40%"> A, C, E, D, B,| H, I, G,| F.  
+```java
+
+public void postOrderTraverse1(TreeNode root) {
+		if (root != null) {
+			postOrderTraverse1(root.left);
+			postOrderTraverse1(root.right);
+			System.out.print(root.val+"  ");
+		}
+	}
+```
 
 ## Breadth First Traversal (BFS):
 - ***Level Order Traversal:*** level by level  
