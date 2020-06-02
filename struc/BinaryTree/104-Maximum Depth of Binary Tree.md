@@ -1,20 +1,6 @@
 # 104. Maximum Depth of Binary Tree
 
-## DFS + DC + Recursive
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def maxDepth(self, root: TreeNode) -> int:
-        if not root: return 0
-        else:
-            return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
-```
-##  DFS + Stack + Iterative
+##  DFS + Stack + Iterative: from top to bottom
 ```python
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
@@ -33,38 +19,51 @@ class Solution:
     
 ```
 
-## BFS + Queue + Incursive
+## BFS + Queue + Iterative: from top to bottom
 ```python
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
-        if not root: return 0 # 树为空，返回0
-        max_depth = 0 # 最大深度初始化为0
+        if not root: return 0   # Empty tree; return 0
         queue = [root]
-
+        depth = 0
         while queue:
-            current_level_size = len(queue) # 当前层次的节点个数
-            for _ in range(current_level_size): 
+            for _ in range(len(queue)): # For each element in the current level
                 # 弹出当前层次的所有节点，并将每个节点的孩子节点入队
                 node = queue.pop(0)
-                if node.left: queue.append(node.left)
-                if node.right: queue.append(node.right)
-            max_depth += 1 # 每遍历完一层的节点，max_depth+1
-
-        return max_depth
-        
-        # if not root: return 0
-        # queue = [(1, root)]
-        # while queue:
-        #     print(queue)
-        #     cur_dep, node = queue.pop(0)
-        #     if node.left:
-        #         queue.append((cur_dep+1,node.left))
-        #     if node.right:
-        #         queue.append((cur_dep+1,node.right))
-        #     print("***********")
-        # return cur_dep
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            depth += 1  # depth + 1 when finish nodes on the current level
+        return depth
 ```
 
+## DFS + DC + Recursive: 
+“自顶向下”的“顶”在树中表现为根结点，“自顶向下”指的就是从根结点向下走。  
+“自底向上”的“底”在树中表现为叶结点，“自底向上”指的就是从叶结点向上走。
+### From bottom to top
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:
+        if not root: return 0
+        else:
+            return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
+```
+### From top to bottom
+```python
+class Solution:
+        def top_down(node, h):
+            if not node: return h
+            else:
+                return max(top_down(node.left, h + 1), top_down(node.right, h + 1))
+        return top_down(root, 0)
+```
 
         
 
