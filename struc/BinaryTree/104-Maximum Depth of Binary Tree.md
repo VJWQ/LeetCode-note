@@ -1,5 +1,12 @@
 # 104. Maximum Depth of Binary Tree
-
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+```
 ##  DFS + Stack + Iterative: from top to bottom
 ```python
 class Solution:
@@ -43,12 +50,6 @@ class Solution:
 “自底向上”的“底”在树中表现为叶结点，“自底向上”指的就是从叶结点向上走。
 ### From bottom to top
 ```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
         if not root: return 0
