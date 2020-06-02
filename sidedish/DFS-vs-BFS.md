@@ -1,6 +1,6 @@
 Difference between DFS and BFS: stack and queue. 
 # DFS: use stack
-**Stack:** Last-In/First-Out (LIFO) or First-In/Last-Out (FILO) manner. 
+## **Stack:** Last-In/First-Out (LIFO) or First-In/Last-Out (FILO) manner. 
 - **empty():** Returns whether the stack is empty.  
 - **size():** Returns the size of the stack.  
 - **top():** Returns a reference to the top most element of the stack.  
@@ -10,7 +10,7 @@ Difference between DFS and BFS: stack and queue.
 
 
 # BFS: use queue
-**Queue:** First In First Out (FIFO) manner. 
+## **Queue:** First In First Out (FIFO) manner. 
 - **Enqueue:** Adds an item to the queue. Overflow if the queue is full.  
 - **Dequeue:** Removes an item from the queue. The items are popped in the same order in which they are pushed. Underflow if the queue is empty.  
 - **Front:** Get the front item from queue.  
