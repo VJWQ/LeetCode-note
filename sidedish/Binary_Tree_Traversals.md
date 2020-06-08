@@ -1,5 +1,3 @@
-
-# Tree Traversals 
 ## Depth First Traversals (DFS):
 - ***Preorder:*** root ---> left child(tree) ---> right child(tree)  
 <img src="img/tree_preorder.png" width="40%" height="40%"> F,| B, A, D, C, E,| G, I, H. 
@@ -46,7 +44,8 @@ public void postOrderTraverse1(TreeNode root) {
 
 Normally when we said "a given tree", the given list is in level-order-traversal. 
 
-### Python program for different tree traversals 
+## Python program for different tree traversals 
+### Iterative
 ```python
 # A class that represents an individual node in a Binary Tree 
 class Node: 
@@ -112,7 +111,15 @@ Inorder traversal of binary tree is
 Postorder traversal of binary tree is
 4 5 2 3 1
 ```
-### Java program for different tree traversals 
+### Recursive
+```python
+
+
+
+```
+
+
+## Java program for different tree traversals 
 ```java
 // Java program for different tree traversals 
 
