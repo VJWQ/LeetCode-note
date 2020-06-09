@@ -27,7 +27,6 @@ public void inOrderTraverse1(TreeNode root) {
 - ***Postorder:*** left child(tree) ---> right child(tree) ---> root  
 <img src="img/tree_postorder.png" width="40%" height="40%"> A, C, E, D, B,| H, I, G,| F.  
 ```java
-
 public void postOrderTraverse1(TreeNode root) {
 		if (root != null) {
 			postOrderTraverse1(root.left);
