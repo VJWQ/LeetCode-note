@@ -32,14 +32,16 @@ class CQueue:
 # Use two queues to construct a stack
 ```python
 class StackWithTwoQueues(object):
-    #定义两个空队列
+    # Define two empty queues
     def __init__(self):
         self.queue1 = []
         self.queue2 = []
-    #入栈
+        
+    # Push element
     def push(self, item):
         self.queue1.append(item)
-    #出栈
+        
+    # Pop element
     def pop(self):
         if len(self.queue1) == 0:
             return(None)
@@ -47,6 +49,7 @@ class StackWithTwoQueues(object):
             self.queue2.append(self.queue1.pop(0))
         self.queue1, self.queue2 = self.queue2, self.queue1
         return (self.queue2.pop())
+        
 #test
 if __name__ == '__main__':
     ss = StackWithTwoQueues()
