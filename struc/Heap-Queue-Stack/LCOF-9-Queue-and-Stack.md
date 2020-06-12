@@ -1,4 +1,10 @@
 # Use two stacks to construct a queue
+Put elements in the first stack A;
+Enqueue: directly append element at the tail of A; 
+Dequeue: if the second stack B is empty: pop out from A and add to B. Now elements in B are in reversed order; pop element from B.  
+if B is not empty: directly pop element. 
+
+
 ```python
 class CQueue:
 
