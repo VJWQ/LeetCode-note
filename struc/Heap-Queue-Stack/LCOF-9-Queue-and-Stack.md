@@ -38,7 +38,8 @@ class CQueue:
 
 # Use two queues to construct a stack
 - Put elements in the first queue;  
-- 
+- **Push**:  directly add in the queue 1;  
+- **Pop**: dequeue from the queue 1 and enqueue in 2;
 ```python
 class StackWithTwoQueues(object):
     # Define two empty queues
