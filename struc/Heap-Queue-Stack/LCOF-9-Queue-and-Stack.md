@@ -37,6 +37,8 @@ class CQueue:
 ```
 
 # Use two queues to construct a stack
+- Put elements in the first queue;  
+- 
 ```python
 class StackWithTwoQueues(object):
     # Define two empty queues
