@@ -1,4 +1,4 @@
-# Use two stacks to construct a queue
+# Use two stacks to construct a queue (FIFO)
 - Put elements in the first stack A;  
 - **Enqueue**: directly append element at the tail of A;  
 - **Dequeue**: 
@@ -35,7 +35,7 @@ class CQueue:
 # param_2 = obj.deleteHead()
 ```
 
-# Use two queues to construct a stack
+# Use two queues to construct a stack (FILO/LIFO)
 - Put elements in the first queue;  
 进栈：元素入队列A
 
