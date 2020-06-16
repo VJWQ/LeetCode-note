@@ -1,7 +1,23 @@
-# Deal with test cases  
+# Input functions in Python
+- `raw_input()` : returning a string without '\n' at the end. Deleted in Python 3 and replaced with `input()`.  
+
+- `input()`: similar to `raw_input()`. **deal with one line data separated by spaces**  
+
+- `sys.stdin()`: read in all input lines. Including '\n' at the end. **deal with multiple lines data**  
+
+    - `sys.stdin.readline()`: read in one line
+
+    - `sys.stdin.readlines()`: read in multiple lines until ctrl+D+enter.
+
+## Process and formation
+- `map(func, iter)`: returns a map object(iterator) of the results after applying the given function to each item of a given iterable (list, tuple etc.)  
+- `list()`: takes sequence types and converts them to lists  
+- `.split()`: splits a string into a list. **deal with targes in the string**  
+- `.strip()/.strip("characters")`: remove spaces/characters at the beginning and at the end of the string.  **deal with targes at the beginning/end**  
+    - `data=list(map(int,input().split()))`  
 
 
-# Porcess input data
+# Porcess input data: templates and examples
 
 ```python
 def main():
