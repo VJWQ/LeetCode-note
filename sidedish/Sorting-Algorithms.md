@@ -1,5 +1,6 @@
 # Sorting Algorithms
-![](img/Sorting+Algorithm.png)
+![](img/Sorting+Algorithm.svg)
+
 
 ## Selection Sort
 
