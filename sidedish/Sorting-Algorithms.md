@@ -4,7 +4,7 @@
 
 ## Selection Sort
 
-## Heapsort
+## Heapsort & Priority Queue
 
 ## Insertion Sort
 
