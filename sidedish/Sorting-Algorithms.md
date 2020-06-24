@@ -6,7 +6,7 @@
 
 ## Priority Queue & Heapsort
 
-## Insertion Sort
+## Insertion Sort => inserting elements
 
 ## Shellsort
 
@@ -23,9 +23,9 @@
 
 ## Counting Sort
 
-## Bucket Sort
+## Bucket Sort => double type
 
-## Radix Sort
+## Radix Sort => string sorts (LSD, MSD)
 
 
 - In-place: transforms input using no auxiliary data structure  
