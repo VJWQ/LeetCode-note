@@ -33,8 +33,11 @@
 
 
 ## Merge Sort
-- Top-down mergesort
-- Bottom-up mergesort
+### Top-down mergesort
+### Bottom-up mergesort
+- **Top-down mergesort:** recursive 
+
+- **Bottom-up mergesort:** iterative
 
 ## Counting Sort
 
