@@ -3,12 +3,26 @@
 
 
 ## Selection Sort
+- Running time is insensitive to input
+- Data movement is minimal (compare with bubble sort): the number of array access is a linear function of the array size
+- Unstable
+
 
 ## Priority Queue & Heapsort
 
 ## Insertion Sort => inserting elements
+- Running time depends on the initial order of items in the input
+- Efficient for partially sorted arrays
+- Fine method for tiny arrays
+- Stable
 
 ## Shellsort
+- A simple extension of insertion sort  
+  - allowing exchanges of array entries that are far apart :arrow_right: produce partially sorted array :arrow_right: do insertion sort :arrow_right: gain speed
+- Increment sequence
+- Performs well on arrays in arbitrary order
+- Useful for large arrays
+- Unstable
 
 ## Bubble Sort
 
@@ -19,7 +33,8 @@
 
 
 ## Merge Sort
-
+- Top-down mergesort
+- Bottom-up mergesort
 
 ## Counting Sort
 
