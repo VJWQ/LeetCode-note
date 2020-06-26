@@ -9,11 +9,20 @@
 
 
 ## Priority Queue & Heapsort
+### Priority Queue
+- **Unordered array representation**
+  - Selecton sort
+- **Ordered array representation**
+  - Insertion sort
+- **Binary heap representation**
+  - Heapsort
+  
+### Heapsort
 
 ## Insertion Sort => inserting elements
 - Running time depends on the initial order of items in the input
 - Efficient for partially sorted arrays
-- Fine method for tiny arrays
+- Fine method for tiny arrays, better than quicksort
 - Stable
 
 ## Shellsort
@@ -29,15 +38,24 @@
 ### Cocktail Shaker Sort
 
 ## Quicksort
-
+- Divide-and-conquer
+- Shuffle and rearrange the array: put the partitioning item into its final position :arrow_right: **recursive calls**: finish the sort
+- Uses few compares: the efficiency of the sort depends on how well the partitioning divides the array
+- Requires time propotional to NlogN on average
+- In-place, Unstable
 
 
 ## Merge Sort
-### Top-down mergesort
-### Bottom-up mergesort
-- **Top-down mergesort:** recursive 
+- Divide-and-conquer
+- **Recursive calls**: break into 2 subarrays to be sorted :arrow_right: combine the ordered subarrays
+- Guarantees to sort any array of N items in time propotional to NlogN
+- Use extra space propotional to N
+- Stable
 
-- **Bottom-up mergesort:** iterative
+### Top-down mergesort
+- Recursive method
+### Bottom-up mergesort
+- Non-recursive
 
 ## Counting Sort
 
