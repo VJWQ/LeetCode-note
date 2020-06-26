@@ -16,8 +16,14 @@
   - Insertion sort
 - **Binary heap representation**
   - Heapsort
-  
+  - Heap-ordered: each node is larger than or equal to its two children
+    - Largest key is at the 
+    - The first entry ([0]) is empty
+    
+   
 ### Heapsort
+- Breaks into 2 phases: `heap construction` and `sortdown`
+- Unstable
 
 ## Insertion Sort => inserting elements
 - Running time depends on the initial order of items in the input
@@ -39,7 +45,7 @@
 
 ## Quicksort
 - Divide-and-conquer
-- Shuffle and rearrange the array: put the partitioning item into its final position :arrow_right: **recursive calls**: finish the sort
+- Shuffle and rearrange the array: put the partitioning item into its final position :arrow_right: `recursive calls`: finish the sort
 - Uses few compares: the efficiency of the sort depends on how well the partitioning divides the array
 - Requires time propotional to NlogN on average
 - In-place, Unstable
@@ -47,7 +53,7 @@
 
 ## Merge Sort
 - Divide-and-conquer
-- **Recursive calls**: break into 2 subarrays to be sorted :arrow_right: combine the ordered subarrays
+- `Recursive calls`: break into 2 subarrays to be sorted :arrow_right: combine the ordered subarrays
 - Guarantees to sort any array of N items in time propotional to NlogN
 - Use extra space propotional to N
 - Stable
