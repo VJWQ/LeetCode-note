@@ -1,7 +1,7 @@
 # Sorting Algorithms
 ![](img/Sorting+Algorithm.svg)
 
-
+# Selection Sorts
 ## Selection Sort
 - Running time is insensitive to input
 - Data movement is minimal (compare with bubble sort): the number of array access is a linear function of the array size
@@ -39,8 +39,9 @@
 - In-place
 - Unstable
 
-
-## Insertion Sort => inserting elements
+# Insertion Sorts
+## Insertion Sort 
+- Good for inserting elements
 - Running time depends on the initial order of items in the input
 - Efficient for partially sorted arrays
 - Fine method for tiny arrays, better than quicksort
@@ -54,9 +55,26 @@
 - Useful for large arrays
 - Unstable
 
+# Exchange Sorts
 ## Bubble Sort
+- Compares adjacent elements and swaps them if they are in the wrong order
+ One-way swap
+- `O(n^2)`
+- Stable
 
 ### Cocktail Shaker Sort
+- Extends bubble sort by operating in two directions: take turns
+- Efficient for almost sorted arrays  
+**Algorithm:**
+Each iteration of the algorithm is broken up into 2 stages:  
+
+The first stage loops through the array from left to right, just like the Bubble Sort. During the loop, adjacent items are compared and if value on the left is greater than the value on the right, then values are swapped. At the end of first iteration, largest number will reside at the end of the array.  
+The second stage loops through the array in opposite direction- starting from the item just before the most recently sorted item, and moving back to the start of the array. Here also, adjacent items are compared and are swapped if required.  
+
+```Java
+
+```
+
 
 ## Quicksort
 - Divide-and-conquer
@@ -66,18 +84,19 @@
 - In-place, Unstable
 
 
-## Merge Sort
+# Merge Sort
 - Divide-and-conquer
 - `Recursive calls`: break into 2 subarrays to be sorted :arrow_right: combine the ordered subarrays
 - Guarantees to sort any array of N items in time propotional to NlogN
 - Use extra space propotional to N
 - Stable
 
-### Top-down mergesort
+## Top-down mergesort
 - Recursive method
-### Bottom-up mergesort
+## Bottom-up mergesort
 - Non-recursive
 
+# Distribution Sorts
 ## Counting Sort
 
 ## Bucket Sort => double type
