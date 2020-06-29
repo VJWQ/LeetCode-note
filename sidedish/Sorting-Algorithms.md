@@ -35,9 +35,7 @@
   - **Heap construction**: 
     - From left to right: insert and `swim()`
     - From right to left: treat the array as a tree and directly use `sink()` for adjustment. More efficient because it starts halfway to skip subheaps of size 1
-  - **Sortdown**: exchange the largest element (root) and the last entry :arrow_right: shrink the array :arrow_right: `sink()` to make the heap ordered
-  
-  这里将堆中的最大元素删除，然后放入堆缩小后数组中空出的位置。这个过程和选择排序有些类似，但所需的比较要少得多，因为堆提供了一种从未排序部分找到最大元素的有效方法。
+  - **Sortdown**: exchange the largest element (root) and the last entry :arrow_right: shrink the array :arrow_right: `sink()` to ensure heap-ordered :arrow_right: the whole array is ordered
 - In-place
 - Unstable
 
