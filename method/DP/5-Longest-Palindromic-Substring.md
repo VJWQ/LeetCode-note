@@ -10,26 +10,31 @@ https://leetcode.com/problems/longest-palindromic-substring
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         '''Brute Force'''
-    #     size = len(s)
-    #     if size < 2: return s
-
-    #     max_len = 1
-    #     begin = 0
-
-    #     for i in range(size - 1):
-    #         for j in range(i + 1, size):
-    #             if j - i + 1 > max_len and self.valid(s, i, j):
-    #                 max_len = j - i + 1
-    #                 begin = i
-    #     return s[begin:begin + max_len]
-
-    # def valid(self, s, left, right):
-    #     while left < right:
-    #         if s[left] != s[right]:
-    #             return False
-    #         left += 1
-    #         right -= 1
-    #     return True
+        if len(s) < 2: return s
+                
+        for length in range(len(s), 0, -1):
+            for begin in range(len(s) - length + 1):
+                if self.is_palindrome(s, begin, begin + length - 1):
+                    return s[begin:begin + length]
+        
+        return ""
+        
+        # max_len = 1
+        # size = len(s)
+        # res = 0
+        # for begin in range(size - 1):
+        #     for end in range(begin + 1, size):
+        #         if end - begin + 1 > max_len and self.is_palindrome(s, begin, end):
+        #             max_len = end - begin + 1
+        #             res = begin
+        # return s[res:res + max_len]
+    
+    
+    def is_palindrome(self, s, left, right):
+        while left <= right and s[left] == s[right]:
+            left += 1 
+            right -= 1 
+        return left >= right
 
 
         '''Expand Around Center'''
