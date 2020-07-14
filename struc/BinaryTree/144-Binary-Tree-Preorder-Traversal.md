@@ -1,5 +1,6 @@
 - Iteration
 - Recursive
+- Notice the difference between **.append(i)** and **.extend(i)**  
 
 ### Python
 
@@ -30,21 +31,36 @@ class Solution:
 
         # return res
 
-        '''Recursive'''
+        '''Recursive-1'''
+        # if not root:
+        #     return []
+            
+        # res = []
+        
+        # def rec(node):
+        #     if node:
+        #         res.append(node.val)
+        #         rec(node.left)
+        #         rec(node.right)
+        
+        # rec(root)
+        
+        # return res
+        
+
+        '''Recursive-2'''
+        if not root:
+            return []
+
+        res = [root.val]
+        res.extend(self.preorderTraversal(root.left))
+        res.extend(self.preorderTraversal(root.right))
+
+        return res
+
+        '''Recursive-3'''
         if not root:
             return []
             
-        res = []
-        
-        def rec(node):
-            if node:
-                res.append(node.val)
-                rec(node.left)
-                rec(node.right)
-        
-        rec(root)
-        
-        return res
-        
-        # return [root.val] + self.preorderTraversal(root.left) + self.preorderTraversal(root.right)
+        return [root.val] + self.preorderTraversal(root.left) + self.preorderTraversal(root.right)
 ```
