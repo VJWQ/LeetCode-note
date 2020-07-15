@@ -1,17 +1,29 @@
+:triangular_flag_on_post: Similar problems:  
+[5. Longest Palindromic Substring](https://github.com/VJWQ/LeetCode-note/blob/master/method/DP/5-Longest-Palindromic-Substring.md)  
+[516. Longest Palindromic Subsequence](https://github.com/VJWQ/LeetCode-note/blob/master/method/DP/516-Longest-Palindromic-Subsequence.md)
+
 - Greedy
 - HashSet/HashMap
+
+
 
 ### Python
 ```python
 class Solution:
     def longestPalindrome(self, s: str) -> int:
-        '''Greedy'''
+        '''Greedy-1'''
         # ans = 0
         # for v in collections.Counter(s).values():
         #     ans += v // 2 * 2   # 1 + 4 / 4 = 5
         #     if ans % 2 == 0 and v % 2 == 1:
         #         ans += 1
         # return ans
+        
+        '''Greedy-2'''
+        import collections
+        count = collections.Counter(s).values()
+        x = sum([item // 2 * 2 for item in count if (item // 2 > 0)])
+        return x if x == len(s) else x + 1
         
         '''HashSet'''
         hash = set()
