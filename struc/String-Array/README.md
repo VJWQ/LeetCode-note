@@ -67,6 +67,7 @@ for (char& c: s) {
 
 ### Python
 - str是一种不可变类，字符串一但生成就不能被改变。+/replace()等方法会产生新的字符串，不会更改原有字符串。
+- 作为区分，list是可变类，因此有 .append(a), 。insert( , ), .pop(), .extend(a) 等方法。
 
 ```python
 s = "Hello"
