@@ -78,6 +78,7 @@ The second stage loops through the array in opposite direction- starting from th
 
 ## Quicksort
 - Divide-and-conquer
+- 利用pivot划分两半，先整体有序，然后再局部有序
 - Shuffle and rearrange the array: put the partitioning item into its final position :arrow_right: `recursive calls`: finish the sort
 - Uses few compares: the efficiency of the sort depends on how well the partitioning divides the array
 - Requires time propotional to NlogN on average
@@ -86,6 +87,7 @@ The second stage loops through the array in opposite direction- starting from th
 
 # Merge Sort
 - Divide-and-conquer
+- 直接划分两半，先局部有序，然后再整体有序
 - `Recursive calls`: break into 2 subarrays to be sorted :arrow_right: combine the ordered subarrays
 - Guarantees to sort any array of N items in time propotional to NlogN
 - Use extra space propotional to N
