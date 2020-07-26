@@ -1,6 +1,7 @@
 - Brute Force
 - Two Pointers
 - Binary Search
+- 降低时间复杂度的主要方法： `空间换时间` 和 `排序换时间`  
 
 ### Python
 ```python
@@ -44,5 +45,20 @@ class Solution:
 
 
         '''Binary Search'''
-        
+        nums.sort()
+
+        n = len(nums)
+        count = 0
+        for i in range(n - 2):
+            for j in range(i + 1, n - 1):
+                left, right = j + 1, n - 1
+                while left < right:
+                    mid = (left + right + 1) // 2
+                    if nums[mid] < nums[i] + nums[j]:
+                        left = mid
+                    else: 
+                        right = mid - 1 
+                if nums[right] < nums[i] + nums[j]:
+                    count += right - j
+        return count
 ```
