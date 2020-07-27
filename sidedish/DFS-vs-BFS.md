@@ -21,6 +21,10 @@ Queue can be generally thought as horizontal in structure (breadth/width can be 
 - 数组对随机访问有较好性能。
 - 链表对插入和删除元素有较好性能。
 
+## 二叉树的BFS vs 图的BFS：
+二叉树中进行 BFS 和图中进行 BFS 最大的区别就是二叉树中无需使用 HashSet（C++: unordered_map, Python: dict) 来存储访问过的节点（丢进过 queue 里的节点）。  
+因为二叉树这种数据结构，上下层关系分明，没有环（circle），所以不可能出现一个节点的儿子的儿子是自己的情况；但是在图中，一个节点的邻居的邻居就可能是自己了。
+
 ## **Queue:** First In First Out (FIFO) manner. 
 - **Enqueue:** Adds an item to the queue. Overflow if the queue is full.  
 - **Dequeue:** Removes an item from the queue. The items are popped in the same order in which they are pushed. Underflow if the queue is empty.  
