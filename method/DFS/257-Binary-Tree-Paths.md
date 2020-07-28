@@ -1,5 +1,5 @@
-- Recursion
-- Iteration
+- Recursion(DFS)
+- Iteration(BFS)
 
 ### Python
 
