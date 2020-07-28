@@ -14,33 +14,42 @@
 class Solution:
     def binaryTreePaths(self, root: TreeNode) -> List[str]:
         '''Recursive-1'''
-        # if not root: return []
-        # if not root.left and not root.right:
-        #     return [str(root.val)]
-        # paths = list()
-        # if root.left:
-        #     for i in self.binaryTreePaths(root.left):
-        #         paths.append(str(root.val) + '->' + i)
-        # if root.right:
-        #     for i in self.binaryTreePaths(root.right):
-        #         paths.append(str(root.val) + '->' + i)
-        # return paths
+        if not root: return []
+        if not root.left and not root.right:
+            return [str(root.val)]
+        paths = list()
+
+        # left = self.binaryTreePaths(root.left)
+        # for i in range(len(left)):
+        #     paths.append(str(root.val) + '->' + left[i])
+
+        # right = self.binaryTreePaths(root.right)
+        # for i in range(len(right)):
+        #     paths.append(str(root.val) + '->' + right[i])
+
+        if root.left:
+            for i in self.binaryTreePaths(root.left):
+                paths.append(str(root.val) + '->' + i)
+        if root.right:
+            for i in self.binaryTreePaths(root.right):
+                paths.append(str(root.val) + '->' + i)
+        return paths
 
 
         '''Recursive-2'''
-        def construct_paths(root, path):
-            if root:
-                path += str(root.val)
-                if not root.left and not root.right:  # if reach a leaf
-                    paths.append(path)  # update paths  
-                else:
-                    path += '->'  # extend the current path
-                    construct_paths(root.left, path)
-                    construct_paths(root.right, path)
+        # def construct_paths(root, path):
+        #     if root:
+        #         path += str(root.val)
+        #         if not root.left and not root.right:  # if reach a leaf
+        #             paths.append(path)  # update paths  
+        #         else:
+        #             path += '->'  # extend the current path
+        #             construct_paths(root.left, path)
+        #             construct_paths(root.right, path)
 
-        paths = []
-        construct_paths(root, '')
-        return paths
+        # paths = []
+        # construct_paths(root, '')
+        # return paths
 
 
         '''Iterative'''
