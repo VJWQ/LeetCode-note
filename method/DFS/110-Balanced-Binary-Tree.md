@@ -1,7 +1,7 @@
 - Top-down Recursion  
 - Bottom-up Recursion  
 
-[A good solution](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/solution/mian-shi-ti-55-ii-ping-heng-er-cha-shu-cong-di-zhi/)
+[A good analysis can be found here](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/solution/mian-shi-ti-55-ii-ping-heng-er-cha-shu-cong-di-zhi/)
 
 ### Python
 ```python
