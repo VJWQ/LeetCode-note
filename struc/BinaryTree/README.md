@@ -1,7 +1,7 @@
 ![](Difference+between+BT+&+BST.jpg)
 
 ## BT:
-The structure of binary tree is naturally suitable for recursive methods. Under this category, only questions that help understanding the basic ideas of binary trees are inculded. Some advanced/more detailed questions can be found under the label of BFS/DFS/Recursive-Iteraive.  
+The structure of binary tree is naturally suitable for recursive methods. Methods like DFS, BFS, Recursive and Iterative are included in for help understanding and exploring the idea of BT. 
 
 ## BST:
 - **BST中最小的节点是从根节点一直往左走遇见的叶子节点**，不一定在树的最底层；
