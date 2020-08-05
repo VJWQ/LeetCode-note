@@ -1,8 +1,9 @@
 - Traversal
 - DC
 - DC with Memory: DP
- - From bottom to top. Add the smaller value at each step till reach the top (0, 0).  
-
+  - From bottom to top. Add the smaller value at each step till reach the top (0, 0)
+- DP: from bottom to top 
+- DP: from top to bottom  
 
 ### Python
 
@@ -34,33 +35,71 @@ class Solution:
     #     return min(left, right) + triangle[x][y]
 
         '''DC with Memory: DP'''
-        return self.divide_conquer(triangle, 0, 0, {})
+    #     return self.divide_conquer(triangle, 0, 0, {})
 
-    def divide_conquer(self, triangle, x, y, memo):
-        # print(x, y)
+    # def divide_conquer(self, triangle, x, y, memo):
+    #     # print(x, y)
 
-        if x == len(triangle):
-            # print('hi')
-            return 0
-        if (x, y) in memo:
-            return memo[(x, y)]
+    #     if x == len(triangle):
+    #         # print('hi')
+    #         return 0
+    #     if (x, y) in memo:
+    #         return memo[(x, y)]
 
-        # print('left start')
-        left = self.divide_conquer(triangle, x + 1, y, memo)
-        # print('left end')
+    #     # print('left start')
+    #     left = self.divide_conquer(triangle, x + 1, y, memo)
+    #     # print('left end')
 
-        # print('right start')
-        right = self.divide_conquer(triangle, x + 1, y + 1, memo)
-        # print('right end')
+    #     # print('right start')
+    #     right = self.divide_conquer(triangle, x + 1, y + 1, memo)
+    #     # print('right end')
 
-        # print(left, right, x, y, triangle[x][y])
-        memo[(x, y)] = min(left, right) + triangle[x][y]
-        # print(memo)
-        return memo[(x, y)]
+    #     # print(left, right, x, y, triangle[x][y])
+    #     memo[(x, y)] = min(left, right) + triangle[x][y]
+    #     # print(memo)
+    #     return memo[(x, y)]
+
+        '''DP: from bottom to top'''
+        # n = len(triangle)
+
+        # # state: dp[i][j] represents the shortest path from position (i, j) to the bottom. 
+        # dp = [[0] * (i + 1) for i in range(n)]
+
+        # # initialize the bottom level
+        # for i in range(n):
+        #     dp[n - 1][i] = triangle[n - 1][i]
+
+        # # from bottom to top: calculate which position to go
+        # for i in range(n - 2, -1, -1):
+        #     for j in range(i + 1):
+        #         dp[i][j] = min(dp[i + 1][j], dp[i + 1][j + 1]) + triangle[i][j]
+
+        # # reach the start point: return the answer
+        # return dp[0][0]
+
+        '''DP: from top to bottom'''
+        n = len(triangle)
+
+        # state: dp[i][j] represents the shortest path from position (0, 0) to (i, j) 
+        dp = [[0] * (i + 1) for i in range(n)]
+
+        # initialize: the leftside and the rightside of the triangle
+        dp[0][0] = triangle[0][0]
+        for i in range(1, n):
+            dp[i][0] = dp[i - 1][0] + triangle[i][0]
+            dp[i][i] = dp[i - 1][i - 1] + triangle[i][i]
+
+        # the last position of (i, j) is (i - 1, j) or (i - 1, j - 1)
+        for i in range(2, n):
+            for j in range(1, i):
+                dp[i][j] = min(dp[i - 1][j], dp[i - 1][j - 1]) + triangle[i][j]
+            
+        # any position at the bottom could be the answer
+        return min(dp[n - 1])
 ```
 
 ![](120-recursion.png)
-#### Output with prints: 
+#### Output with prints: DC with Memory
 ```
 0 0
 left start
