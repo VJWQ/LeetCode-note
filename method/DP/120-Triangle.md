@@ -1,6 +1,7 @@
 - Traversal
 - DC
 - DC with Memory: DP
+ - From bottom to top. Add the smaller value at each step till reach the top (0, 0).  
 
 
 ### Python
