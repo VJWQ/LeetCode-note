@@ -1,3 +1,8 @@
+- Traversal
+- DC
+- DC with Memory: DP
+
+
 ### Python
 
 ```python
