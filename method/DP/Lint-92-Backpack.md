@@ -1,3 +1,21 @@
+# [背包九讲](https://anivian.github.io/pack-master/V2.pdf)
+# [背包六问](https://segmentfault.com/a/1190000006325321)
+[92. Backpack I](https://www.lintcode.com/problem/backpack/description)  
+[125. Backpack II](https://www.lintcode.com/problem/backpack-ii/description)  
+[440. Backpack III](https://www.lintcode.com/problem/backpack-iii/description)  
+[562. Backpack IV](https://www.lintcode.com/problem/backpack-iv/description)  
+[563. Backpack V](https://www.lintcode.com/problem/backpack-v/description)  
+[564. Backpack VI](https://www.lintcode.com/problem/combination-sum-iv/description)  
+
+1. 单次选择 + 最大体积
+2. 单次选择 + 最大价值
+3. 重复选择 + 最大价值
+4. 重复选择 + 唯一排列 + 装满方案数
+5. 单次选择 + 装满方案数
+6. 重复选择 + 不同排列 + 装满方案数
+
+
+## 92. Backpack I
 只有在m>>2^n的时候，动态规划才弱于搜索，所以大部分情况下，动态规划都是一个最优的选择   
 - DP
 - A Space Optimized DP solution: uses rolling arrays to optimize the space usage. 使用dp[j-A[i]]代替dp[i-1][j-A[i]]。
@@ -46,3 +64,8 @@ class Solution:
                     dp[i] = 1
         return ans
 ```
+## 125. Backpack II
+## 440. Backpack III
+## 562. Backpack IV
+## 563. Backpack V
+## 564. Backpack VI
