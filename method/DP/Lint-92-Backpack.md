@@ -16,9 +16,11 @@
 
 
 ## 92. Backpack I
+
 只有在m>>2^n的时候，动态规划才弱于搜索，所以大部分情况下，动态规划都是一个最优的选择   
 - DP
 - A Space Optimized DP solution: uses rolling arrays to optimize the space usage. 使用dp[j-A[i]]代替dp[i-1][j-A[i]]。
+[填表](https://www.youtube.com/watch?v=UBth-pABHoM)
 
 ### Python
 ```python
@@ -29,7 +31,7 @@ class Solution:
     @return: The maximum size
     """
     def backPack(self, m, A):
-        '''DP-1'''
+        '''DP-1: 2D array with boolean'''
         # n = len(A)
         # # state: dp[i][j] represents if the sum of j can be satisifed with the first i numbers
         # dp = [[False] * (m + 1) for _ in range(n + 1)]
@@ -52,17 +54,35 @@ class Solution:
         #         return i
         # return 0
 
-        '''DP-2: with array'''
+        
+        '''DP-2: 2D array with value'''
+        # n = len(A)
+        # dp = [[0] * (m + 1) for _ in range(n + 1)]
+        
+        # for i in range(1, n + 1):
+        #     for j in range(1, m + 1):
+        #         dp[i][j] = dp[i - 1][j]     # 第i个物品不选
+        #         if j >= A[i - 1]:       # 判断背包容量是不是大于第i件物品的体积
+        #             # select or not
+        #             dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - A[i - 1]]+A[i - 1])
+        #         else:
+        #             dp[i][j] = dp[i - 1][j]
+
+        # return dp[-1][-1]
+        
+        
+        '''DP-3: optimized with 1D array'''
+        if m == 0 or len(A) == 0:
+            return 0
         n = len(A)
-        dp = [0 for x in range(m+1)]
-        dp[0] = 1
-        ans = 0
-        for item in A:
-            for i in range(m,-1,-1):
-                if i-item >=0 and dp[i-item] > 0:
-                    ans = max(ans,i)
-                    dp[i] = 1
-        return ans
+        dp = [0 for _ in range(m + 1)]
+        for i in range(n):
+            # 滚动数组优化 倒序枚举j
+            # for j in range(m, A[i] - 1, -1):
+            for j in range(m, - 1, -1):
+                dp[j] = max(dp[j], dp[j - A[i]] + A[i])
+                
+        return dp[m]
 ```
 ## 125. Backpack II
 ## 440. Backpack III
