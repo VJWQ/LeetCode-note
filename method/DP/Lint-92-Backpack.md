@@ -56,33 +56,51 @@ class Solution:
 
         
         '''DP-2: 2D array with value'''
-        # n = len(A)
-        # dp = [[0] * (m + 1) for _ in range(n + 1)]
+        n = len(A)
+        dp = [[0] * (m + 1) for _ in range(n + 1)]
         
-        # for i in range(1, n + 1):
-        #     for j in range(1, m + 1):
-        #         dp[i][j] = dp[i - 1][j]     # 第i个物品不选
-        #         if j >= A[i - 1]:       # 判断背包容量是不是大于第i件物品的体积
-        #             # select or not
-        #             dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - A[i - 1]]+A[i - 1])
-        #         else:
-        #             dp[i][j] = dp[i - 1][j]
+        for i in range(1, n + 1):
+            for j in range(1, m + 1):
+                if j >= A[i - 1]:       # 判断背包容量是不是大于第i件物品的体积
+                    # select or not
+                    dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - A[i - 1]]+A[i - 1])
+                else:
+                    dp[i][j] = dp[i - 1][j]
 
-        # return dp[-1][-1]
+        return dp[-1][-1]
         
         
         '''DP-3: optimized with 1D array'''
-        if m == 0 or len(A) == 0:
-            return 0
         n = len(A)
-        dp = [0 for _ in range(m + 1)]
-        for i in range(n):
-            # 滚动数组优化 倒序枚举j
-            # for j in range(m, A[i] - 1, -1):
-            for j in range(m, - 1, -1):
-                dp[j] = max(dp[j], dp[j - A[i]] + A[i])
+        f = [[False] * (m + 1), [False] * (m + 1)]
+        
+        f[0][0] = True
+        for i in range(1, n + 1):
+            f[i % 2][0] = True
+            for j in range(1, m + 1):
+                if j >= A[i - 1]:
+                    f[i % 2][j] = f[(i - 1) % 2][j] or f[(i - 1) % 2][j - A[i - 1]]
+                else:
+                    f[i % 2][j] = f[(i - 1) % 2][j]
+                    
+        for i in range(m, -1, -1):
+            if f[n % 2][i]:
+                return i
+        return 0
+        
+        
+        '''DP-4: optimized with 1D array'''
+        # if m == 0 or len(A) == 0:
+        #     return 0
+        # n = len(A)
+        # dp = [0 for _ in range(m + 1)]
+        # for i in range(n):
+        #     # 滚动数组优化 倒序枚举j
+        #     # for j in range(m, A[i] - 1, -1):
+        #     for j in range(m, - 1, -1):
+        #         dp[j] = max(dp[j], dp[j - A[i]] + A[i])
                 
-        return dp[m]
+        # return dp[m]
 ```
 ## 125. Backpack II
 ## 440. Backpack III
