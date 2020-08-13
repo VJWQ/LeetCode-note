@@ -1,5 +1,6 @@
-# [背包九讲](https://anivian.github.io/pack-master/V2.pdf)
-# [背包六问](https://segmentfault.com/a/1190000006325321)
+# Classic blog articles: 
+## [背包九讲](https://anivian.github.io/pack-master/V2.pdf)
+## [背包六问](https://segmentfault.com/a/1190000006325321)
 [92. Backpack I](https://www.lintcode.com/problem/backpack/description)  
 [125. Backpack II](https://www.lintcode.com/problem/backpack-ii/description)  
 [440. Backpack III](https://www.lintcode.com/problem/backpack-iii/description)  
