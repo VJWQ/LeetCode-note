@@ -1,19 +1,22 @@
-* [Backpack I](#Backpack-I): Given `n` items with size `A[i]`, an integer `m` denotes the size of a backpack. How full you can fill this backpack?
+* [Backpack I](#Backpack-I): Given `n` items with size `A[i]`, and a backpack with size `m`. How full you can fill this backpack?   
+`Each item may only be used once`
 
 * [Backpack II](#Backpack-II): Given `n` items with size `A[i]` and value `V[i]`, and a backpack with size `m`. What's the maximum value can you put into the backpack?
+`Each item may only be used once`
+
+* [Backpack III](#Backpack-III): Given `n` kind of items with size `A[i]` and value `V[i]`, and a backpack with size `m`. What's the maximum value can you put into the backpack?  
+`Each item may be chosen unlimited number of times`
 
 
-* [Backpack III](#Backpack-III): Given `n` kind of items with size `A[i]` and value `V[i]` (each item has an infinite number available) and a backpack with size `m`. What's the maximum value can you put into the backpack?
+* [Backpack IV](#Backpack-IV): Given `n` items with size `nums[i]` which an integer array and all positive numbers, **no duplicates**. An integer `target` denotes the size of a backpack. Find the number of possible fill the backpack.  
+`Each item may be chosen unlimited number of times`
 
+* [Backpack V](#Backpack-V): Given `n` items with size `nums[i]` which an integer array and all positive numbers. An integer `target` denotes the size of a backpack. Find the number of possible fill the backpack.  
+`Each item may only be used once`  
 
-* [Backpack IV](#Backpack-IV): Given `n` items with size `nums[i]` which an integer array and all positive numbers, no duplicates. An integer target denotes the size of a backpack. Find the number of possible fill the backpack.
-
-Each item may be chosen unlimited number of times
-* [Backpack V](#Backpack-V): Given `n` items with size `nums[i]` which an integer array and all positive numbers. An integer target denotes the size of a backpack. Find the number of possible fill the backpack.
-
-Each item may only be used once
-* [Backpack VI](#Backpack-VI): Given an integer array nums with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer target.
-
+* [Backpack VI](#Backpack-VI): Given an integer array `nums` with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer `target`.  
+`Each item may be chosen unlimited number of times`  
+  
 
 
 
