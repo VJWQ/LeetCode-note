@@ -82,3 +82,18 @@ V = [1,5,2,4]
 m = 10
 print(backPackIII(A, V, m))
 ```
+# Backpack IV
+```python
+
+```
+
+# Backpack V
+```python
+
+```
+
+# Backpack VI
+```python
+
+```
+
