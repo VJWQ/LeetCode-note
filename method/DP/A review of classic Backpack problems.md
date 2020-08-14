@@ -34,5 +34,51 @@
 | [564. Backpack VI](https://www.lintcode.com/problem/combination-sum-iv/description) | 重复选择 + 不同排列 + 装满方案数 |
 
 # Backpack I
+```python
+# Backpack I
+def backPackI(A, m):
+    n = len(A)
+    dp = [0] * (m + 1)
+    for i in range(n):
+        for j in range(m, A[i] - 1, -1):
+            dp[j] = max(dp[j], dp[j - A[i]] + A[i])
+    return dp[m]
 
+A = [3, 4, 8, 5]
+m = 10
+print(backPackI(A, m))
+```
 
+# Backpack II
+```python
+# Backpack II
+def backPackII(A, V, m):
+    n = len(A)
+    dp = [0] * (m + 1)
+    for i in range(n):
+        for j in range(m, A[i] - 1, -1):
+            dp[j] = max(dp[j], dp[j - A[i]] + V[i])
+    return dp[m]
+
+A = [2,3,5,7]
+V = [1,5,2,4]
+m = 10
+print(backPackII(A, V, m))
+```
+
+# Backpack III
+```python
+# Backpack III
+def backPackIII(A, V, m):
+    n = len(A)
+    dp = [0] * (m + 1)
+    for i in range(n):
+        for j in range(A[i], m + 1):
+        	dp[j] = max(dp[j], dp[j - A[i]] + V[i])            
+    return dp[m]
+
+A = [2,3,5,7]
+V = [1,5,2,4]
+m = 10
+print(backPackIII(A, V, m))
+```
