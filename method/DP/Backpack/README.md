@@ -1,4 +1,5 @@
 # A review of classic Backpack problems
+[Good resource](https://zhengyang2015.gitbooks.io/lintcode/content/backpack_i_92.html)  
 * [Backpack I](#Backpack-I): Given `n` items with size `A[i]`, and a backpack with size `m`. How full you can fill this backpack?   
 `Each item may only be used once`
 
