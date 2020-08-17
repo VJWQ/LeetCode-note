@@ -1,3 +1,4 @@
+# A review of classic Backpack problems
 * [Backpack I](#Backpack-I): Given `n` items with size `A[i]`, and a backpack with size `m`. How full you can fill this backpack?   
 `Each item may only be used once`
 
@@ -31,69 +32,30 @@
 | [440. Backpack III](https://www.lintcode.com/problem/backpack-iii/description)      | 重复选择 + 最大价值 |
 | [562. Backpack IV](https://www.lintcode.com/problem/backpack-iv/description)        | 重复选择 + 唯一排列 + 装满方案数 |
 | [563. Backpack V](https://www.lintcode.com/problem/backpack-v/description)          | 单次选择 + 装满方案数 |
-| [564. Backpack VI](https://www.lintcode.com/problem/combination-sum-iv/description) | 重复选择 + 不同排列 + 装满方案数 |
+| [564. Backpack VI](https://www.lintcode.com/problem/combination-sum-iv/description) | 重复选择 + 不同排列 + 装满方案数 |  
+   
+    
+# Backpack I: 01背包问题
+内循环逆向更新一维数组
 
-# Backpack I
-```python
-# Backpack I
-def backPackI(A, m):
-    n = len(A)
-    dp = [0] * (m + 1)
-    for i in range(n):
-        for j in range(m, A[i] - 1, -1):
-            dp[j] = max(dp[j], dp[j - A[i]] + A[i])
-    return dp[m]
+# Backpack II: 完全背包问题
+内循环正向更新一维数组
 
-A = [3, 4, 8, 5]
-m = 10
-print(backPackI(A, m))
-```
+# Backpack III: 背包问题
 
-# Backpack II
-```python
-# Backpack II
-def backPackII(A, V, m):
-    n = len(A)
-    dp = [0] * (m + 1)
-    for i in range(n):
-        for j in range(m, A[i] - 1, -1):
-            dp[j] = max(dp[j], dp[j - A[i]] + V[i])
-    return dp[m]
+# Backpack IV: 
 
-A = [2,3,5,7]
-V = [1,5,2,4]
-m = 10
-print(backPackII(A, V, m))
-```
+# Backpack V: 
 
-# Backpack III
-```python
-# Backpack III
-def backPackIII(A, V, m):
-    n = len(A)
-    dp = [0] * (m + 1)
-    for i in range(n):
-        for j in range(A[i], m + 1):
-        	dp[j] = max(dp[j], dp[j - A[i]] + V[i])            
-    return dp[m]
+# Backpack VI: 
 
-A = [2,3,5,7]
-V = [1,5,2,4]
-m = 10
-print(backPackIII(A, V, m))
-```
-# Backpack IV
-```python
 
-```
 
-# Backpack V
-```python
+给出 n 个物品, 以及一个数组, nums[i]代表第i个物品的大小, 保证大小均为正数并且没有重复, 正整数 target 表示背包的大小, 找到能填满背包的方案数。
+每一个物品可以使用无数次
 
-```
+给出 n 个物品, 以及一个数组, nums[i] 代表第i个物品的大小, 保证大小均为正数, 正整数 target 表示背包的大小, 找到能填满背包的方案数。
+每一个物品只能使用一次
 
-# Backpack VI
-```python
-
-```
+给出一个都是正整数的数组 nums，其中没有重复的数。从中找出所有的和为 target 的组合个数。
 
