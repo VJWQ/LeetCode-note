@@ -8,7 +8,8 @@
 class Solution:
     def findTargetSumWays(self, nums: List[int], S: int) -> int:
         '''DP'''
-        if sum(nums) < S: return False
+        if sum(nums) < S: return 0
+        if (sum(nums) + S) % 2: return 0
         n = len(nums)
         target = (sum(nums) + S) // 2
         dp = [0] * (target + 1)
