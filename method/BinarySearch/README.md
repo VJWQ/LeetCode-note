@@ -2,12 +2,20 @@ Binary search is a search algorithm that find the position of a target value wit
 
 Time complexity: O(logn). Requires a sorted array.  
 普通查找：O(n)。Doesn't ask for sorted array, directly use for-loop.  
+
 在数组中二分，只要是有序数组，就可以进行二分。递增和递减只会与当前位置与目标值的大小关系如何影响边界变化有关。  
 同时，二分问题其实并不需要要求数组一定是严格有序的，我们不能根据数组是否有序来判断是否是二分问题。
 
 [Understanding the BS details](https://github.com/labuladong/fucking-algorithm/blob/master/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E8%AF%A6%E8%A7%A3.md)
 
-Template:  
+## 问题类型：
+- 在排序的输入集上二分
+- 在未排序的输入集上二分
+- 二分答案集
+
+
+
+## Template:  
 ### Java:
 ```java
 public class Solution {
