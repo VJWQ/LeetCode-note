@@ -36,13 +36,16 @@
 | [564. Backpack VI](https://www.lintcode.com/problem/combination-sum-iv/description) | 重复选择 + 不同排列 + 装满方案数 |  
    
     
-# Backpack I: 01背包问题
+# Backpack I: 
+## 01背包问题
 内循环逆向更新一维数组
 
-# Backpack II: 完全背包问题
+# Backpack II: 
+## 完全背包问题
 内循环正向更新一维数组
 
-# Backpack III: 背包问题
+# Backpack III: 
+## 背包问题
 
 # Backpack IV: 
 
