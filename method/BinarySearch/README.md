@@ -8,7 +8,7 @@ Time complexity: O(logn). Requires a sorted array.
 
 [Understanding the BS details](https://github.com/labuladong/fucking-algorithm/blob/master/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E8%AF%A6%E8%A7%A3.md)
 
-## 问题类型：
+问题类型：
 - 在排序的输入集上二分
 - 在未排序的输入集上二分
 - 二分答案集
@@ -106,3 +106,119 @@ class Solution:
 
 为什么明明可以 start = mid + 1 偏偏要写成 start = mid?
 大部分时候，mid 是可以 +1 和 -1 的。在一些特殊情况下，比如寻找目标的最后一次出现的位置时，当 target 与 nums[mid] 相等的时候，是不能够使用 mid + 1 或者 mid - 1 的。因为会导致漏掉解。那么为了节省脑力，统一写成 start = mid / end = mid 并不会造成任何解的丢失，并且也不会损失效率——log(n) 和 log(n+1) 没有区别。
+
+
+# 时间复杂度低于O(N)的算法
+在上一章中，我们讲到了一个O(logn)时间复杂度的算法，二分算法。只需要O(logn)的时间就可以成功进行搜索。而我们在第四章的时候，就已经讲到了，我们可以通过时间复杂度来推测算法，当我们发现需要时间复杂度为<O(N)的算法时，我们可以考虑使用二分搜索来解决问题。但是如果题目不能用二分搜索来解决，我们该使用什么算法来解决呢？
+
+今天我们就来看一下几种同为logn时间复杂度的算法——**快速幂算法**、**辗转相除法**以及另外两种小于O(N)时间复杂度的算法——**质因数分解**和**分块检索法**。
+
+## 辗转相除法
+### 算法介绍
+辗转相除法， 又名欧几里德算法， 是求最大公约数的一种方法。它的具体做法是：用较大的数除以较小的数，再用除数除以出现的余数（第一余数），再用第一余数除以出现的余数（第二余数），如此反复，直到最后余数是0为止。如果是求两个数的最大公约数，那么最后的除数就是这两个数的最大公约数。
+
+### 代码
+
+Java:
+```java
+public int gcd(int big, int small) {
+    if (small != 0) {
+        return gcd(small, big % small);
+    } else {
+        return big;
+    }
+}
+```
+Python:
+```python
+def gcd(big, small):
+    if small != 0:
+        return gcd(small, big % small)
+    else:
+        return big
+```
+C++:
+```cpp
+int gcd(int big, int small) {
+    if (small != 0) {
+        return gcd(small, big % small);
+    } else {
+        return big;
+    }
+}
+```
+
+## 分解质因数
+以 sqrt{n} 为时间复杂度的算法并不多见，最具代表性的就是分解质因数了。
+
+### 具体步骤
+记up = sqrt{n}，作为质因数k的上界, 初始化k=2。
+当k <= up 且 n不为1 时，执行步骤3，否则执行步骤4。
+当n被k整除时，不断整除并覆盖n，同时结果中记录k，直到n不能整出k为止。之后k自增，执行步骤2。
+当n不为1时，把n也加入结果当中，算法结束。
+几点解释
+不需要判定k是否为质数，如果k不为质数，且能整出n时，n早被k的因数所除。故能整除n的k必是质数。
+为何引入up？为了优化性能。当k大于up时，k已不可能整除n，除非k是n自身。也即为何步骤4判断n是否为1，n不为1时必是比up大的质数。
+步骤2中，也判定n是否为1，这也是为了性能，当n已为1时，可早停。
+### 代码
+Java:
+```java
+public List<Integer> primeFactorization(int n) {
+    List<Integer> result = new ArrayList<>();
+    int up = (int) Math.sqrt(n);
+    
+    for (int k = 2; k <= up && n > 1; ++k) {
+        while (n % k == 0) {
+            n /= k;
+            result.add(k);
+        }
+    }
+    
+    if (n > 1) {
+        result.add(n);
+    }
+    
+    return result;
+}
+```
+Python:
+```python
+def primeFactorization(n):
+    result = []
+    up = int(math.sqrt(n));
+    
+    k = 2
+    while k <= up and n > 1: 
+        while n % k == 0:
+            n //= k
+            result.append(k)
+        k += 1
+            
+    if n > 1:
+        result.append(n)
+        
+    return result
+```
+C++:
+```cpp
+vector<int> primeFactorization(int n) {
+    vector<int> result;
+    int up = (int)sqrt(n);
+    
+    for (int k = 2; k <= up && n > 1; ++k) {
+        while (n % k == 0) {
+            n /= k;
+            result.push_back(k);
+        }
+    }
+    
+    if (n > 1) {
+        result.push_back(n);
+    }
+    
+    return result;
+}
+```
+### 复杂度分析
+最坏时间复杂度O(sqrt (n) )。当n为质数时，取到其最坏时间复杂度。
+空间复杂度O(log(n)), 当n质因数很多时，需要空间大，但总不会多于O(log(n))个
